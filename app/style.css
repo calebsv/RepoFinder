@@ -1,0 +1,32 @@
+:root {
+  --limao: #5dd62c;
+  --esmeralda: #2edc85;
+  --mala: #224f10;
+  --dark: #0f0f0f;
+  --cinza: #202020;
+}
+@font-face {
+    font-family: "Ragick";
+    src: url(./fonts/ragick.otf) format(truetype);
+    font-weight:400;
+    font-style: normal;
+}
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+    font-family: "Ragick", sans-serif;
+}
+body {
+  min-height: 100vh;
+}
+
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+
+  background-size: 40px 40px;
+  color:var(--limao);
+}
