@@ -29,19 +29,20 @@
 
 <body class="relative min-h-dvh overflow-x-hidden bg-dark text-white grid-bg">
 
-    <div class="flex items-center justify-center">
+    <div class="flex items-center justify-center fade-in delay-1">
     <div class="mt-2 inline-flex gap-2 rounded-full border border-lime-500/20 bg-lime-500/10 px-4 py-2 text-sm text-lime-500 text-center">GitHub Repository Search <i class="bi bi-github"></i></div>
     </div>
-    <h1 class="font-black tracking-tight leading-none text-5xl md:text-7xl sm:text-6xl text-center mt-10">
+    <h1 class="font-black tracking-tight leading-none text-5xl md:text-7xl sm:text-6xl text-center mt-10 fade-in delay-2">
         Repo<span class="text-limao">Finder</span></h1>
-    <p class="mt-5 max-w-md mx-auto text-zinc-400 leading-relaxed text-center">Explore perfis, descubra projetos e encontre repositórios em segundos.
+    <p class="mt-5 max-w-md mx-auto text-zinc-400 leading-relaxed text-center fade-in delay-3">
+        Explore perfis, descubra projetos e encontre repositórios em segundos.
     </p>
 
     <div class="absolute -top-44 -left-44 w-[500px] h-[500px] rounded-full bg-[#5DD62C]/20 blur-[180px]"></div>
 
     <section class="relative flex mt-8 items-center justify-center px-5">
         <form
-            class="relative mx-auto w-full max-w-lg space-y-8 rounded-3xl border border-white/10 bg-white/[0.03] p-6 shadow-2xl backdrop-blur-3xl sm:p-8 md:p-10">
+            class="relative mx-auto w-full max-w-lg space-y-8 rounded-3xl border border-white/10 bg-white/[0.03] p-6 shadow-2xl backdrop-blur-3xl sm:p-8 md:p-10 fade-in delay-4" id="search-form">
 
             <div
                 class="absolute left-0 top-0 h-px w-full bg-gradient-to-r from-transparent via-lime-400/60 to-transparent">
@@ -58,18 +59,20 @@
                 </i>
 
                 <input type="text" placeholder="Digite um usuário..."
-                    class="w-full rounded-2xl border border-white/10 bg-black/20 py-4 pl-14 pr-5 text-white outline-none transition placeholder:text-zinc-500 focus:border-lime-400 focus:ring-4 focus:ring-lime-400/20" 
+                    class="w-full rounded-2xl border border-white/10 bg-black/20 py-4 pl-14 pr-5 text-white outline-none transition placeholder:text-zinc-500 focus:border-lime-400 focus:ring-4 focus:ring-lime-400/20" id="search-input" type="text" 
                     />
             </div>
 
             <button type="submit"
-                class="mx-auto flex w-fit px-8 rounded-2xl bg-gradient-to-r from-lime-500 to-emerald-500 py-4 font-semibold text-white transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_35px_rgba(93,214,44,.45)] active:scale-95">
+                class="mx-auto flex w-fit px-8 rounded-2xl bg-gradient-to-r from-lime-500 to-emerald-500 py-4 font-semibold text-white transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_35px_rgba(93,214,44,.45)] active:scale-95 font-bold">
                 Buscar 
             </button>
 
         </form>
+
+        <section id="results"></section>
     </section>
-    <footer class="relative mt-12 sm:mt-32 pb-10">
+    <footer class="relative mt-12 sm:mt-32 pb-10 fade-in delay-5">
 
             <div class="absolute left-1/2 top-0 h-40 w-40 -translate-x-1/2 rounded-full bg-lime-500 opacity-20 blur-[120px]"></div>
 
@@ -81,6 +84,10 @@
         </footer>
 
     
+<script src="js/app.js"></script>
+<script src="js/api.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/main.js"></script>
 </body>
 
 </html>

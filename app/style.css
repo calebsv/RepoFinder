@@ -6,17 +6,21 @@
   --cinza: #202020;
 }
 @font-face {
-    font-family: "Ragick";
-    src: url(./fonts/ragick.otf) format(truetype);
-    font-weight:400;
-    font-style: normal;
+  font-family: "Ragick";
+  src: url(./fonts/ragick.otf) format(truetype);
+  font-weight: 400;
+  font-style: normal;
 }
 * {
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 h1 {
-    font-family: "Ragick", sans-serif;
+  font-family: "Ragick", sans-serif;
 }
 body {
   min-height: 100vh;
@@ -28,5 +32,42 @@ body {
     linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
 
   background-size: 40px 40px;
-  color:var(--limao);
+  color: var(--limao);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.delay-1 {
+  animation-delay: 0.2s;
+}
+
+.delay-2 {
+  animation-delay: 0.4s;
+}
+
+.delay-3 {
+  animation-delay: 0.6s;
+}
+
+.delay-4 {
+  animation-delay: 0.8s;
+}
+
+.delay-5 {
+  animation-delay: 1s;
 }
