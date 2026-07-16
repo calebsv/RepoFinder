@@ -63,35 +63,41 @@ body {
   animation-delay: 1s;
 }
 @keyframes cardAppear {
+  from {
+    opacity: 0;
 
-    from {
+    transform: translateY(25px) scale(0.96);
 
-        opacity: 0;
+    filter: blur(8px);
+  }
 
-        transform:
-        translateY(25px)
-        scale(.96);
+  to {
+    opacity: 1;
 
-        filter: blur(8px);
+    transform: translateY(0) scale(1);
 
-    }
-
-    to {
-
-        opacity: 1;
-
-        transform:
-        translateY(0)
-        scale(1);
-
-        filter: blur(0);
-
-    }
-
+    filter: blur(0);
+  }
 }
 
 .card-animation {
-    opacity: 0;
-    animation: cardAppear .6s cubic-bezier(.22,1,.36,1) forwards;
+  opacity: 0;
+  animation: cardAppear 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  filter: blur(8px);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease,
+    filter 0.6s ease;
+}

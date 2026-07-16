@@ -1,3 +1,4 @@
+import { initScrollReveal } from "./observerScroll.js";
 const profile = document.getElementById("profile");
 const results = document.getElementById("results");
 
@@ -24,8 +25,8 @@ export function renderUser(user) {
    function createRepositoryCard(repo, index) {
     return `
         <article
-            class="mt-10 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 transition-all duration-300 hover:-translate-y-1 card-animation"
-            style="animation-delay:${index * 100}ms">
+            class="reveal mt-10 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 transition-all duration-300 hover:-translate-y-1 card-animation"
+            style="animation-delay:${index * 800}ms">
 
             <div class="flex items-center justify-between">
 
@@ -68,13 +69,21 @@ export function renderUser(user) {
     `;
 }
 
+
 export function renderRepositories(repositories) {
     results.innerHTML = "";
 
     repositories.forEach((repo,index) => {
-        const card = createRepositoryCard(repo,index);
-        results.innerHTML += card;
+        results.innerHTML += createRepositoryCard(repo,index);
     });
+
+    const card = document.querySelectorAll(".reveal");
+
+    cards.forEach((card,index) => {
+        setTimeout(() => {
+            card.classList.add("active");
+        }, index * 80);
+    }); 
 
 
 }
