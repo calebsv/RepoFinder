@@ -25,6 +25,9 @@ html {
 h1 {
   font-family: "Ragick", sans-serif;
 }
+.text-shadow {
+   text-shadow: 5px 5px 8px rgba(0, 0, 0, 0.5);
+}
 body {
   min-height: 100vh;
 }

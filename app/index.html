@@ -9,6 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <meta name="description" content="Aplicação feita com API pronta para buscar e achar repositórios específicos">
     <meta name="author" content="Caleb Lira">
+    <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <script>
         tailwind.config = {
@@ -21,6 +22,8 @@
                         mala: "#224F10",
                         dark: "#0F0F0F",
                         cinza: "#202020",
+                        bang: '#051650',
+                        gr: "#123499",
                     },
                 },
             },
@@ -28,23 +31,25 @@
     </script>
 </head>
 
-<body class="relative min-h-dvh overflow-x-hidden bg-white/10 text-zinc-900 dark:bg-dark dark:text-white transition-colors duration-300">
+<body
+    class="relative min-h-dvh overflow-x-hidden bg-white/10 text-zinc-900 dark:bg-dark dark:text-white transition-colors duration-300">
 
     <div class="flex items-center justify-center fade-in delay-1">
         <div
-            class="mt-2 inline-flex gap-2 rounded-full border border-lime-500 bg-lime-600/10 dark:bg-lime-500/10 px-4 py-2 text-sm text-limao dark:text-lime-500 text-center">
+            class="mt-2 inline-flex gap-2 rounded-full border border-gr bg-blue-600/10 dark:bg-lime-500/10 px-4 py-2 text-sm text-bang dark:text-lime-500 dark:border-lime-500 text-center">
             GitHub Repository Search <i class="bi bi-github"></i>
         </div>
     </div>
     <h1
-        class="font-black tracking-tight leading-none text-5xl md:text-7xl sm:text-6xl text-center mt-10 fade-in delay-2">
-        Repo<span class="text-limao">Finder</span>
+        class="font-bold text-white tracking-tight leading-none text-5xl md:text-7xl sm:text-6xl text-center mt-10 fade-in delay-2 text-shadow">
+        Repo<span class="text-gr dark:text-limao">Finder</span>
     </h1>
     <button id="theme-toggle"
-        class="absolute top-5 right-5 z-50 rounded-full border border-limao text-limao dark:border-white/10 dark:bg-white/5 p-3 dark:text-lime-400 hover:bg-white/10 transition" aria-label="Trocar tema">
+        class="absolute top-5 right-5 z-50 rounded-full border border-gr text-gr dark:border-white/10 dark:bg-white/5 p-3 dark:text-lime-400 hover:bg-white/10 transition"
+        aria-label="Trocar tema">
         <i id="theme-icon" class="bi bi-moon-stars text-xl"></i>
     </button>
-    <p class="mt-5 max-w-md mx-auto text-zinc-400 leading-relaxed text-center fade-in delay-3">
+    <p class="mt-5 max-w-md mx-auto text-zinc-600 dark:text-zinc-400 leading-relaxed text-center fade-in delay-3">
         Explore perfis, descubra projetos e encontre repositórios em segundos.
     </p>
 
@@ -52,7 +57,7 @@
 
     <section class="relative flex mt-8 items-center justify-center px-5">
         <form
-            class="relative mx-auto w-full max-w-lg space-y-8 rounded-3xl border border-limao dark:border-white/10 dark:bg-white/[0.03] p-6 shadow-2xl backdrop-blur-3xl sm:p-8 md:p-10 fade-in delay-4"
+            class="relative mx-auto w-full max-w-lg space-y-8 rounded-3xl border border-gr dark:border-limao dark:border-white/10 dark:bg-white/[0.03] p-6 shadow-2xl backdrop-blur-3xl sm:p-8 md:p-10 fade-in delay-4 shadow-lg"
             id="search-form">
 
             <div
@@ -60,23 +65,22 @@
             </div>
 
             <div>
-                <p class="mt-2 text-zinc-400">
-                    Encontre qualquer repositório do GitHub digitando o nome do usuário. Exemplo: <span
-                        class="text-lime-400">calebsv</span>
+                <p class="mt-2 text-zinc-600 dark:text-zinc-400">
+                    Encontre qualquer repositório do GitHub digitando o nome do usuário. Exemplo: <a href="https://github.com/calebsv" target="_blank" class="text-gr dark:text-lime-400">calebsv</a>
                 </p>
             </div>
 
             <div class="relative mb-12">
-                <i class="bi bi-search absolute left-5 top-1/2 -translate-y-1/2 text-xl text-lime-400">
+                <i class="bi bi-search absolute left-5 top-1/2 -translate-y-1/2 text-xl dark:text-lime-400 text-gr">
                 </i>
 
                 <input type="text" placeholder="Digite um usuário..."
-                    class="w-full rounded-2xl border border-white/10 bg-black/20 py-4 pl-14 pr-5 text-white outline-none transition placeholder:text-zinc-500 focus:border-lime-400 focus:ring-4 focus:ring-lime-400/20"
+                    class="w-full rounded-2xl border dark:border-white/10 border-black/10 bg-black/20 py-4 pl-14 pr-5 text-gr dark:text-white outline-none transition placeholder:text-zinc-500 focus:border-gr focus:ring-gr/20 dark:focus:border-lime-400 focus:ring-4 dark:focus:ring-lime-400/20"
                     id="search-input" type="text" />
             </div>
 
             <button type="submit"
-                class="mx-auto flex w-fit px-8 rounded-2xl bg-gradient-to-r from-lime-500 to-emerald-500 py-4 font-semibold text-white transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_35px_rgba(93,214,44,.45)] active:scale-95 font-bold">
+                class="mx-auto flex w-fit px-5 py-2.5 rounded-[7px] bg-gr text-white text-[17px] font-bold transition-all duration-500 shadow-[0_0_25px_theme(colors.gr)]   hover:shadow-[0_0_5px_theme(colors.bang),0_0_25px_theme(colors.gr)] dark:bg-limao dark:shadow-[0_0_25px_theme(colors.limao)]  dark:hover:shadow-[0_0_5px_theme(colors.esmeralda),0_0_25px_theme(colors.limao)] hover:-translate-y-2">
                 Buscar
             </button>
 
@@ -84,11 +88,11 @@
 
     </section>
 
-    <div id="repository-count" class="mt-10 text-center text-zinc-400"></div>
+    <div id="repository-count" class="mt-10 font-bold text-center text-gr dark:text-zinc-400"></div>
     <section id="profile" class="mt-10 mx-auto max-w-5xl px-5"></section>
     <div class="flex flex-col gap-4 md:flex-row">
         <select id="sort-select"
-            class="hidden mt-8 mx-auto rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-white">
+            class="hidden mt-8 mx-auto rounded-lg border border-gr dark:border-limao bg-black/10  px-4 py-3 dark:text-limao text-gr">
             <option value="stars">⭐ Mais estrelas</option>
             <option value="forks">🍴 Mais forks</option>
             <option value="recent">🕒 Mais recente</option>
@@ -108,9 +112,9 @@
         </div>
 
         <div
-            class="relative mx-auto max-w-xl rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl text-center px-2 py-1.5 sm:px-6 sm:py-3">
-            <span class="text-text text-md sm:text-base">Desenvolvido por <a href="https://github.com/calebsv"
-                    target="_blank" style="text-decoration: none; color:lime;">Caleb Lira</a> &copy;</span>
+            class="relative mx-auto max-w-xl rounded-3xl border border-gr bg-black/10 dark:border-white/10 dark:bg-white/5 backdrop-blur-xl text-center px-2 py-1.5 sm:px-6 sm:py-3 font-bold">
+            <span class="text-zinc-600 dark:text-white text-md sm:text-base">Desenvolvido por <a href="https://github.com/calebsv"
+                    target="_blank" class="text-gr dark:text-limao">Caleb Lira</a> &copy;</span>
         </div>
 
     </footer>

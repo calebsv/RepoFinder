@@ -21,7 +21,7 @@ form.addEventListener("submit", async (event) => {
         sortSelect.classList.remove("hidden");
         renderRepositories(repositories);
         renderCounter(repositories.length);
-
+        
     } catch (error) {
         console.error(error.message);
     }

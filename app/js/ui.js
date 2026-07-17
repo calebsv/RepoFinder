@@ -8,9 +8,9 @@ export function renderUser(user) {
 
             <img
                 src="${user.avatar_url}"
-                class="w-28 h-28 rounded-full border-4 border-lime-400">
+                class="w-28 h-28 rounded-full border-4 border-gr dark:border-lime-400">
 
-            <h2 class="font-ragick mt-5 text-3xl font-bold text-white">
+            <h2 class="font-ragick mt-5 text-3xl font-bold text-gr dark:text-white">
                 ${user.name ?? user.login}
             </h2>
 
@@ -20,23 +20,23 @@ export function renderUser(user) {
 
             <div class="mt-8 grid grid-cols-2 gap-4 md:grid-cols-4">
 
-    <div class="rounded-2xl bg-white/5 p-4 text-center border border-white/10">
-        <p class="text-2xl font-bold text-lime-400">${user.public_repos}</p>
+    <div class="rounded-2xl bg-black/5 dark:bg-white/5 p-4 text-center border border-black/20 dark:border-white/10">
+        <p class="text-2xl font-bold text-gr dark:text-lime-400">${user.public_repos}</p>
         <span class="text-sm text-zinc-400">Repositórios</span>
     </div>
 
-    <div class="rounded-2xl bg-white/5 p-4 text-center border border-white/10">
-        <p class="text-2xl font-bold text-lime-400">${user.followers}</p>
+    <div class="rounded-2xl bg-black/5 dark:bg-white/5 p-4 text-center border border-black/20 dark:border-white/10">
+        <p class="text-2xl font-bold text-gr  dark:text-lime-400">${user.followers}</p>
         <span class="text-sm text-zinc-400">Seguidores</span>
     </div>
 
-    <div class="rounded-2xl bg-white/5 p-4 text-center border border-white/10">
-        <p class="text-2xl font-bold text-lime-400">${user.following}</p>
+    <div class="rounded-2xl bg-black/5 dark:bg-white/5 p-4 text-center border border-black/20 dark:border-white/10">
+        <p class="text-2xl font-bold text-gr  dark:text-lime-400">${user.following}</p>
         <span class="text-sm text-zinc-400">Seguindo</span>
     </div>
 
-    <div class="rounded-2xl bg-white/5 p-4 text-center border border-white/10">
-        <p class="text-2xl font-bold text-lime-400">${user.public_gists}</p>
+    <div class="rounded-2xl bg-black/5 dark:bg-white/5 p-4 text-center border border-black/20 dark:border-white/10">
+        <p class="text-2xl font-bold text-gr  dark:text-lime-400">${user.public_gists}</p>
         <span class="text-sm text-zinc-400">Gists</span>
     </div>
 
@@ -48,16 +48,16 @@ export function renderUser(user) {
 function createRepositoryCard(repo, index) {
     return `
         <article
-            class="mt-10 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 transition-all duration-300 hover:-translate-y-1 card-animation"
+            class="mt-10 rounded-3xl border border-gr dark:border-white/10 bg-white/5 backdrop-blur-xl p-6 transition-all duration-300 card-animation"
             style="animation-delay:${index * 800}ms">
 
             <div class="flex items-center justify-between">
 
-                <h3 class="text-xl font-bold text-white">
+                <h3 class="text-xl font-bold text-zinc-500 dark:text-white">
                     ${repo.name}
                 </h3>
 
-                <span class="rounded-full bg-lime-500/10 px-3 py-1 text-xs text-lime-400">
+                <span class="rounded-full bg-gr/5 dark:bg-lime-500/10 px-3 py-1 text-xs dark:text-lime-400 text-gr border dark:border-limao border-gr">
                     ${repo.language ?? "Sem linguagem"}
                 </span>
 
@@ -69,7 +69,7 @@ function createRepositoryCard(repo, index) {
 
             <div class="mt-6 flex items-center justify-between">
 
-                <div class="flex gap-5 text-zinc-300">
+                <div class="flex gap-5 text-zinc-500">
 
                     <span>⭐ ${repo.stargazers_count}</span>
 
@@ -80,7 +80,7 @@ function createRepositoryCard(repo, index) {
                 <a
                     href="${repo.html_url}"
                     target="_blank"
-                    class="font-semibold text-lime-400 hover:text-lime-300">
+                    class="font-semibold text-gr dark:text-lime-400 hover:text-lime-300">
 
                     Abrir →
 
