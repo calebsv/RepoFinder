@@ -45,11 +45,10 @@ export function renderUser(user) {
         </div>
     `;
 }
-
 function createRepositoryCard(repo, index) {
     return `
         <article
-            class="reveal mt-10 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 transition-all duration-300 hover:-translate-y-1 card-animation"
+            class="mt-10 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 transition-all duration-300 hover:-translate-y-1 card-animation"
             style="animation-delay:${index * 800}ms">
 
             <div class="flex items-center justify-between">
@@ -100,7 +99,7 @@ export function renderRepositories(repositories) {
         results.innerHTML += createRepositoryCard(repo, index);
     });
 
-    const card = document.querySelectorAll(".reveal");
+    const cards = document.querySelectorAll(".reveal");
 
     cards.forEach((card, index) => {
         setTimeout(() => {
