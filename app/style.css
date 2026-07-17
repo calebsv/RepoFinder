@@ -11,8 +11,8 @@
   font-weight: 400;
   font-style: normal;
 }
-.font-ragick{
-  font-family: 'Ragick', sans-serif;
+.font-ragick {
+  font-family: "Ragick", sans-serif;
 }
 * {
   box-sizing: border-box;
@@ -65,6 +65,10 @@ body {
 .delay-5 {
   animation-delay: 1s;
 }
+.card-animation {
+  opacity: 0;
+  animation: cardAppear 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
 @keyframes cardAppear {
   from {
     opacity: 0;
@@ -83,24 +87,3 @@ body {
   }
 }
 
-.card-animation {
-  opacity: 0;
-  animation: cardAppear 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-}
-
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  filter: blur(8px);
-}
-
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-  filter: blur(0);
-
-  transition:
-    opacity 0.6s ease,
-    transform 0.6s ease,
-    filter 0.6s ease;
-}
